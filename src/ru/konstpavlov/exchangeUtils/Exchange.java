@@ -1,27 +1,28 @@
 package ru.konstpavlov.exchangeUtils;
 import ru.konstpavlov.Client;
 import ru.konstpavlov.Order;
+import ru.konstpavlov.operations.ExchangeOperation;
+import ru.konstpavlov.operations.OperationFactory;
 import ru.konstpavlov.utils.SecurityType;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class Exchange {
 
-    private Map<String,Client> clients = new HashMap<>();
+    private OperationFactory operationFactory = new OperationFactory();
+    private Map<String,Client> clients = new LinkedHashMap<>();
     private OperationList sellList = new OperationList();
     private OperationList buyList = new OperationList();
 
 
-    public Exchange() {
+    public Exchange(String clientsFilePath, String ordersFilePath) {
 
-        try( BufferedReader bufferedFileReader = new BufferedReader(new FileReader("src\\ru\\konstpavlov\\resourses\\clients.txt"));
-            BufferedReader bufferedFileReader2 = new BufferedReader(new FileReader("src\\ru\\konstpavlov\\resourses\\orders.txt"))) {
+        try( BufferedReader bufferedFileReader = new BufferedReader(new FileReader(clientsFilePath));
+            BufferedReader bufferedFileReader2 = new BufferedReader(new FileReader(ordersFilePath))) {
 
             String line;
             while ((line = bufferedFileReader.readLine())!= null){
@@ -51,6 +52,29 @@ public class Exchange {
     }
 
     private void createOrder(String[] temp){
+        // parsing data
+        String clientName = temp[0];
+        SecurityType securityType = selectSecurityType(temp[2]);
+        Order order = new Order(securityType,Integer.parseInt(temp[3]),Integer.parseInt(temp[4]));
+        //call factory for getting correct operation
+        ExchangeOperation operation = operationFactory.getOperation(temp[1],clientName,order);
+        // add operation to correct opertion list
+        operation.addOperationToQueue(this);
+    }
+
+    private SecurityType selectSecurityType (String text){
+        switch (text){
+            case  "A":
+                return SecurityType.A;
+            case "B":
+                return SecurityType.B;
+            case "C":
+                return SecurityType.C;
+            case "D":
+                return SecurityType.D;
+            default:
+                throw new IllegalArgumentException();
+        }
 
     }
 
