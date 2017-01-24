@@ -39,4 +39,30 @@ public class Client {
     public void setSecurities(Map<SecurityType, Integer> securities) {
         this.securities = securities;
     }
+
+
+    @Override
+    public int hashCode(){
+    int result = name.hashCode();
+        result = 31*result +balance;
+        for (Map.Entry<SecurityType,Integer> entry: securities.entrySet()) {
+            result= result+ entry.getKey().hashCode()+ entry.getValue();
+        }
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object o){
+        if (this == o) return true;
+        if (!(o instanceof Client) ) return false;
+        Client client = (Client) o;
+
+        if (!this.name.equals(client.getName())) {
+            return false;
+        }
+        else if (this.balance != client.getBalance()){
+            return false;
+        }
+        return this.securities.equals(client.getSecurities());
+    }
 }
