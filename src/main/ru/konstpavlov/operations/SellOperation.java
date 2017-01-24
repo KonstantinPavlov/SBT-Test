@@ -7,7 +7,7 @@ public class SellOperation extends AbstractOperation implements ExchangeOperatio
     @Override
     public void executeOperation(Exchange exchange) {
         if (exchange.getBuyList().checkOperation(this)){
-            ExchangeOperation matchingOperation =exchange.getBuyList().pullOperation(this);
+            ExchangeOperation matchingOperation =exchange.getBuyList().pollOperation(this);
 
             if (!matchingOperation.getClientName().equals(this.getClientName())) {
                 exchange.buyOperation(matchingOperation);

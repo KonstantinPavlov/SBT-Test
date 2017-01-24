@@ -11,7 +11,7 @@ public class OperationList {
     private Map<Order,Queue<ExchangeOperation>> operationMap= new LinkedHashMap<>();
 
     public void addOperation(ExchangeOperation operation){
-        // check for operation in map already
+        // check for operation in map
         if (operationMap.containsKey(operation.getOrder())){
             this.operationMap.get(operation.getOrder()).add(operation);
         }
@@ -22,10 +22,10 @@ public class OperationList {
         }
     }
 
-    public ExchangeOperation pullOperation(ExchangeOperation operation){
-        // получаем нужную операцию из очереди
+    public ExchangeOperation pollOperation(ExchangeOperation operation){
+        // take operation from queue
         ExchangeOperation oper =  operationMap.get(operation.getOrder()).poll();
-        // если очередь осталась пустой то чистим operationMap
+        // if queue is empty - delete operation from operationMap
         if (operationMap.get(operation.getOrder()).size() == 0){
             operationMap.remove(operation.getOrder());
         }
