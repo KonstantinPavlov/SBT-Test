@@ -40,6 +40,14 @@ public class Client {
         this.securities = securities;
     }
 
+    public String getSecuritiesString(){
+        String result="";
+        for (Map.Entry<SecurityType,Integer> entry:securities.entrySet()) {
+            result = result+ entry.getValue().toString() + "\t";
+        }
+        result = result.substring(0,result.length()-2);
+        return result;
+    }
 
     @Override
     public int hashCode(){

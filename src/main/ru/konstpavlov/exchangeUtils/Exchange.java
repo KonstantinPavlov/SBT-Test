@@ -5,6 +5,7 @@ import main.ru.konstpavlov.operations.OperationFactory;
 import main.ru.konstpavlov.utils.SecurityType;
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -61,13 +62,26 @@ public class Exchange {
     }
 
     public void sellOperation(ExchangeOperation operation){
-        System.out.println("Client " + operation.getClientName());
-        System.out.println("Selling  "+ operation.getOrder().getSecurityType() + " count " + operation.getOrder().getSecurityCount() + " cost "+ operation.getOrder().getSecurityCost() );
+        baseOperation(-1,1,operation);
     }
 
     public  void buyOperation(ExchangeOperation operation){
-        System.out.println("Client " + operation.getClientName());
-        System.out.println("Buying  "+ operation.getOrder().getSecurityType() + " count " + operation.getOrder().getSecurityCount() + " cost "+ operation.getOrder().getSecurityCost() );
+       baseOperation(1,-1,operation);
+    }
+
+    private void baseOperation(int a, int b ,ExchangeOperation operation){
+        Client currentClient= clients.get(operation.getClientName());
+        SecurityType secType = operation.getOrder().getSecurityType();
+
+        int secCount;
+        secCount=currentClient.getSecurities().get(secType);
+        secCount+= a*operation.getOrder().getSecurityCount();
+        currentClient.getSecurities().put(secType,secCount);
+
+        int currentBalance=currentClient.getBalance();
+        currentBalance = currentBalance + b*(operation.getOrder().getSecurityCount()*operation.getOrder().getSecurityCost());
+        currentClient.setBalance(currentBalance);
+        clients.put(currentClient.getName(),currentClient);
     }
 
     private SecurityType selectSecurityType (String text){
@@ -85,8 +99,19 @@ public class Exchange {
         }
     }
 
-    public void calculate(){
-        System.out.println("Calculating....");
+    public void showResults(String resultFilePath){
+        try(FileWriter writer = new FileWriter(resultFilePath, false)) {
+            for (Map.Entry<String,Client> entry: clients.entrySet()) {
+                String text = entry.getKey()+ "\t";
+                text = text+ entry.getValue().getSecuritiesString();
+                writer.write(text);
+                writer.append("\n");
+            }
+            writer.flush();
+        }
+        catch (IOException e){
+            System.out.println(e.getMessage());
+        }
     }
 
     public Map<String, Client> getClients() {
