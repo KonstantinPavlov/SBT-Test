@@ -1,10 +1,10 @@
 package main.ru.konstpavlov.exchangeUtils;
+
 import main.ru.konstpavlov.Client;
 import main.ru.konstpavlov.Order;
 import main.ru.konstpavlov.operations.ExchangeOperation;
 import main.ru.konstpavlov.operations.OperationFactory;
 import main.ru.konstpavlov.utils.SecurityType;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -17,7 +17,6 @@ public class Exchange {
     private Map<String,Client> clients = new LinkedHashMap<>();
     private OperationList sellList = new OperationList();
     private OperationList buyList = new OperationList();
-
 
     public Exchange(String clientsFilePath, String ordersFilePath) {
 
@@ -59,8 +58,18 @@ public class Exchange {
         Order order = new Order(securityType,Integer.parseInt(temp[3]),Integer.parseInt(temp[4]));
         // call factory for getting correct operation
         ExchangeOperation operation = operationFactory.getOperation(temp[1],clientName,order);
-        // add operation to correct operation list
-        operation.addOperationToQueue(this, operation);
+        //check for
+        operation.executeOperation(this);
+        //add operation to correct operation list
+//        operation.addOperationToQueue(this, operation);
+    }
+
+    public void sellOperation(ExchangeOperation operation){
+
+    }
+
+    public  void buyOperation(ExchangeOperation operation){
+
     }
 
     private SecurityType selectSecurityType (String text){
