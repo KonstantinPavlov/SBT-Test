@@ -1,7 +1,5 @@
 package main.ru.konstpavlov.exchangeUtils;
 
-import main.ru.konstpavlov.Client;
-import main.ru.konstpavlov.Order;
 import main.ru.konstpavlov.operations.ExchangeOperation;
 import main.ru.konstpavlov.operations.OperationFactory;
 import main.ru.konstpavlov.utils.SecurityType;
@@ -60,13 +58,13 @@ public class Exchange {
         ExchangeOperation operation = operationFactory.getOperation(temp[1],clientName,order);
         //check for
         operation.executeOperation(this);
-        //add operation to correct operation list
-//        operation.addOperationToQueue(this, operation);
     }
 
     public void sellOperation(ExchangeOperation operation){
         System.out.println("Client " + operation.getClientName());
         System.out.println("Selling  "+ operation.getOrder().getSecurityType() + " count " + operation.getOrder().getSecurityCount() + " cost "+ operation.getOrder().getSecurityCost() );
+
+
     }
 
     public  void buyOperation(ExchangeOperation operation){

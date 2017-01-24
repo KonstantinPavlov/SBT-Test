@@ -1,5 +1,5 @@
 import junit.framework.TestCase;
-import main.ru.konstpavlov.Order;
+import main.ru.konstpavlov.exchangeUtils.Order;
 import main.ru.konstpavlov.exchangeUtils.OperationList;
 import main.ru.konstpavlov.operations.ExchangeOperation;
 import main.ru.konstpavlov.operations.SellOperation;

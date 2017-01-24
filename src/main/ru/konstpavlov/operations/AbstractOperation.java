@@ -1,6 +1,6 @@
 package main.ru.konstpavlov.operations;
 
-import main.ru.konstpavlov.Order;
+import main.ru.konstpavlov.exchangeUtils.Order;
 
 public abstract class AbstractOperation {
 

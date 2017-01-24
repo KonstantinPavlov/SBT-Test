@@ -1,4 +1,4 @@
-package main.ru.konstpavlov;
+package main.ru.konstpavlov.exchangeUtils;
 
 import main.ru.konstpavlov.utils.SecurityType;
 

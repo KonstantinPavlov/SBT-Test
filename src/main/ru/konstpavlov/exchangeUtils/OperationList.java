@@ -1,6 +1,5 @@
 package main.ru.konstpavlov.exchangeUtils;
 
-import main.ru.konstpavlov.Order;
 import main.ru.konstpavlov.operations.ExchangeOperation;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
