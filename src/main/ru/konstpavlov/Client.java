@@ -1,6 +1,6 @@
-package ru.konstpavlov;
+package main.ru.konstpavlov;
 
-import ru.konstpavlov.utils.SecurityType;
+import main.ru.konstpavlov.utils.SecurityType;
 
 import java.util.Map;
 

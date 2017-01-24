@@ -1,6 +1,6 @@
-package ru.konstpavlov.operations;
+package main.ru.konstpavlov.operations;
 
-import ru.konstpavlov.Order;
+import main.ru.konstpavlov.Order;
 
 public class OperationFactory {
     public ExchangeOperation getOperation(String operationType, String clientName, Order order){

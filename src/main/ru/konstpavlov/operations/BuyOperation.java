@@ -1,7 +1,7 @@
-package ru.konstpavlov.operations;
+package main.ru.konstpavlov.operations;
 
-import ru.konstpavlov.exchangeUtils.Exchange;
-import ru.konstpavlov.Order;
+import main.ru.konstpavlov.exchangeUtils.Exchange;
+import main.ru.konstpavlov.Order;
 
 public class BuyOperation extends AbstractOperation implements ExchangeOperation {
     @Override

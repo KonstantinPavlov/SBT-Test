@@ -1,7 +1,7 @@
-package ru.konstpavlov.operations;
+package main.ru.konstpavlov.operations;
 
-import ru.konstpavlov.exchangeUtils.Exchange;
-import ru.konstpavlov.Order;
+import main.ru.konstpavlov.exchangeUtils.Exchange;
+import main.ru.konstpavlov.Order;
 
 /**
  * Created by Константин on 23.01.2017.

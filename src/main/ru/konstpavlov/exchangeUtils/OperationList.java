@@ -1,7 +1,7 @@
-package ru.konstpavlov.exchangeUtils;
+package main.ru.konstpavlov.exchangeUtils;
 
-import ru.konstpavlov.Order;
-import ru.konstpavlov.operations.ExchangeOperation;
+import main.ru.konstpavlov.Order;
+import main.ru.konstpavlov.operations.ExchangeOperation;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.Map;
@@ -35,4 +35,7 @@ public class OperationList {
         }
     }
 
+    public Map<Order, Queue<ExchangeOperation>> getOperationMap() {
+        return operationMap;
+    }
 }

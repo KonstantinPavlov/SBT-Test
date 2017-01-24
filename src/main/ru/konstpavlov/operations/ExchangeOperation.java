@@ -1,6 +1,6 @@
-package ru.konstpavlov.operations;
-import ru.konstpavlov.Order;
-import ru.konstpavlov.exchangeUtils.Exchange;
+package main.ru.konstpavlov.operations;
+import main.ru.konstpavlov.Order;
+import main.ru.konstpavlov.exchangeUtils.Exchange;
 
 public interface ExchangeOperation {
     void executeOperation(Exchange exchange);

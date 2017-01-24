@@ -1,9 +1,9 @@
-package ru.konstpavlov.exchangeUtils;
-import ru.konstpavlov.Client;
-import ru.konstpavlov.Order;
-import ru.konstpavlov.operations.ExchangeOperation;
-import ru.konstpavlov.operations.OperationFactory;
-import ru.konstpavlov.utils.SecurityType;
+package main.ru.konstpavlov.exchangeUtils;
+import main.ru.konstpavlov.Client;
+import main.ru.konstpavlov.Order;
+import main.ru.konstpavlov.operations.ExchangeOperation;
+import main.ru.konstpavlov.operations.OperationFactory;
+import main.ru.konstpavlov.utils.SecurityType;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
