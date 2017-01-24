@@ -17,7 +17,7 @@ public class SellOperation extends AbstractOperation implements ExchangeOperatio
     }
 
     @Override
-    public void addOperationToQueue(Exchange exchange) {
-        exchange.getSellList().addOperation();
+    public void addOperationToQueue(Exchange exchange, ExchangeOperation operation) {
+        exchange.getSellList().addOperation(operation);
     }
 }

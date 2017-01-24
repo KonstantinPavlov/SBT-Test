@@ -41,6 +41,7 @@ public class Exchange {
     }
 
     private void createClient(String[] temp){
+        // parsing data
         int balance = Integer.parseInt(temp[1]);
         Map<SecurityType,Integer> securities = new LinkedHashMap<>();
         securities.put(SecurityType.A,Integer.parseInt(temp[2]));
@@ -56,15 +57,15 @@ public class Exchange {
         String clientName = temp[0];
         SecurityType securityType = selectSecurityType(temp[2]);
         Order order = new Order(securityType,Integer.parseInt(temp[3]),Integer.parseInt(temp[4]));
-        //call factory for getting correct operation
+        // call factory for getting correct operation
         ExchangeOperation operation = operationFactory.getOperation(temp[1],clientName,order);
-        // add operation to correct opertion list
-        operation.addOperationToQueue(this);
+        // add operation to correct operation list
+        operation.addOperationToQueue(this, operation);
     }
 
     private SecurityType selectSecurityType (String text){
         switch (text){
-            case  "A":
+            case "A":
                 return SecurityType.A;
             case "B":
                 return SecurityType.B;

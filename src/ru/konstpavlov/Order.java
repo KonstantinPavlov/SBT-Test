@@ -29,6 +29,14 @@ public class Order {
         return this.getSecurityType() == order.getSecurityType();
     }
 
+    @Override
+    public int hashCode (){
+        int result = securityType.hashCode();
+        result = 31*result + securityCost*2;
+        return (31*result + securityCount);
+    }
+
+
     public SecurityType getSecurityType() {
         return securityType;
     }
