@@ -56,15 +56,13 @@ public class Exchange {
         Order order = new Order(securityType,Integer.parseInt(temp[3]),Integer.parseInt(temp[4]));
         // call factory for getting correct operation
         ExchangeOperation operation = operationFactory.getOperation(temp[1],clientName,order);
-        //check for
+        //execute operation
         operation.executeOperation(this);
     }
 
     public void sellOperation(ExchangeOperation operation){
         System.out.println("Client " + operation.getClientName());
         System.out.println("Selling  "+ operation.getOrder().getSecurityType() + " count " + operation.getOrder().getSecurityCount() + " cost "+ operation.getOrder().getSecurityCost() );
-
-
     }
 
     public  void buyOperation(ExchangeOperation operation){
@@ -85,7 +83,6 @@ public class Exchange {
             default:
                 throw new IllegalArgumentException();
         }
-
     }
 
     public void calculate(){

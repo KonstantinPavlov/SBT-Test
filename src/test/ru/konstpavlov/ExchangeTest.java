@@ -51,6 +51,7 @@ public class ExchangeTest extends TestCase {
             Assert.assertTrue(clientsCorrect.containsKey(clientName));
             Assert.assertEquals(clientsCorrect.get(clientName),entry.getValue());
         }
+        // or
+        //Assert.assertEquals(clientsCorrect,exchange.getClients());
     }
-
 }
