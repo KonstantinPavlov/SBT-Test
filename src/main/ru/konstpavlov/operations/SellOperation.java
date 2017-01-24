@@ -8,8 +8,14 @@ public class SellOperation extends AbstractOperation implements ExchangeOperatio
     public void executeOperation(Exchange exchange) {
         if (exchange.getBuyList().checkOperation(this)){
             ExchangeOperation matchingOperation =exchange.getBuyList().pullOperation(this);
-            exchange.buyOperation(matchingOperation);
-            exchange.sellOperation(this);
+
+            if (!matchingOperation.getClientName().equals(this.getClientName())) {
+                exchange.buyOperation(matchingOperation);
+                exchange.sellOperation(this);
+            }
+            else{
+                System.out.println("Sell an Buy for similar client");
+            }
         }
         else {
             addOperationToQueue(exchange);
