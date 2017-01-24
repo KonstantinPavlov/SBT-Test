@@ -7,4 +7,5 @@ public interface ExchangeOperation {
 
     void addOperationToQueue(Exchange exchange);
     Order getOrder();
+    String getClientName();
 }

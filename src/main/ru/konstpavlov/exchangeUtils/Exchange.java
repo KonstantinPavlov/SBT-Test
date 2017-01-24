@@ -65,11 +65,13 @@ public class Exchange {
     }
 
     public void sellOperation(ExchangeOperation operation){
-
+        System.out.println("Client " + operation.getClientName());
+        System.out.println("Selling  "+ operation.getOrder().getSecurityType() + " count " + operation.getOrder().getSecurityCount() + " cost "+ operation.getOrder().getSecurityCost() );
     }
 
     public  void buyOperation(ExchangeOperation operation){
-
+        System.out.println("Client " + operation.getClientName());
+        System.out.println("Buying  "+ operation.getOrder().getSecurityType() + " count" + operation.getOrder().getSecurityCount() + " cost "+ operation.getOrder().getSecurityCost() );
     }
 
     private SecurityType selectSecurityType (String text){

@@ -11,8 +11,10 @@ public class BuyOperation extends AbstractOperation implements ExchangeOperation
             // we found  matching operation
             System.out.println("We found smth");
             // delete sell operation from queue in SellList and make Sell operation
-
+            ExchangeOperation matchingOperation =exchange.getSellList().pullOperation(this);
+            exchange.sellOperation(matchingOperation);
             // make Buy operation at Client
+            exchange.buyOperation(this);
         }
         else {
             addOperationToQueue(exchange);

@@ -15,4 +15,8 @@ public abstract class AbstractOperation {
     public Order getOrder() {
         return order;
     }
+
+    public String getClientName() {
+        return clientName;
+    }
 }

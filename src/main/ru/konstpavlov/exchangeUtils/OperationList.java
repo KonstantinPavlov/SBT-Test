@@ -23,9 +23,17 @@ public class OperationList {
         }
     }
 
-    public void pullOrder(){}
+    public ExchangeOperation pullOperation(ExchangeOperation operation){
+        // получаем нужную операцию из очереди
+        ExchangeOperation oper =  operationMap.get(operation.getOrder()).poll();
+        // если очередь осталась пустой то чистим operationMap
+        if (operationMap.get(operation.getOrder()).size() == 0){
+            operationMap.remove(operation.getOrder());
+        }
+        return oper;
+    }
 
-    // Method for check existance of operation in operationMap
+    // Method for check existence of operation in operationMap
     public boolean checkOperation(ExchangeOperation operation){
         if (operationMap.containsKey(operation.getOrder())){
          return true;

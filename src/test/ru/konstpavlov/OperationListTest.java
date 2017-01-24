@@ -1,7 +1,5 @@
-import com.sun.corba.se.spi.orb.Operation;
 import junit.framework.TestCase;
 import main.ru.konstpavlov.Order;
-import main.ru.konstpavlov.exchangeUtils.Exchange;
 import main.ru.konstpavlov.exchangeUtils.OperationList;
 import main.ru.konstpavlov.operations.ExchangeOperation;
 import main.ru.konstpavlov.operations.SellOperation;

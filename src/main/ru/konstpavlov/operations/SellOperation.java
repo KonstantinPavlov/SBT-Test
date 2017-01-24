@@ -6,18 +6,14 @@ import main.ru.konstpavlov.Order;
 public class SellOperation extends AbstractOperation implements ExchangeOperation {
     @Override
     public void executeOperation(Exchange exchange) {
-        // checking queue of sell operation for matching
         if (exchange.getBuyList().checkOperation(this)){
-            // we found  matching operation
-            System.out.println("We found smth");
-            // delete sell operation from queue in SellList and make Sell operation
-
-            // make Buy operation at Client
+            ExchangeOperation matchingOperation =exchange.getBuyList().pullOperation(this);
+            exchange.buyOperation(matchingOperation);
+            exchange.sellOperation(this);
         }
         else {
             addOperationToQueue(exchange);
         }
-
     }
 
     public SellOperation(String clientName, Order order) {
