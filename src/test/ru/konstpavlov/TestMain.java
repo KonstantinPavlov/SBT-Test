@@ -5,6 +5,6 @@ import org.junit.runners.Suite;
 
 @Suite.SuiteClasses({TestClient.class, TestExchange.class, TestOperationList.class, TestOrder.class})
 @RunWith(Suite.class)
-public class MainTest extends TestCase{
+public class TestMain extends TestCase{
 
 }
