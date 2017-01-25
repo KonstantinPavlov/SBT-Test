@@ -4,7 +4,7 @@ import main.ru.konstpavlov.utils.SecurityType;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class OrderTest extends TestCase {
+public class TestOrder extends TestCase {
 
     @Test
     public void testEquals(){

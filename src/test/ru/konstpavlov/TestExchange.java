@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-public class ExchangeTest extends TestCase {
+public class TestExchange extends TestCase{
 
     @Test
     public void testSellingAndBuyingQueue(){

@@ -7,7 +7,7 @@ import main.ru.konstpavlov.utils.SecurityType;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class OperationListTest extends TestCase{
+public class TestOperationList extends TestCase {
 
     @Test
     public void testAddingToOperationList(){
@@ -17,7 +17,6 @@ public class OperationListTest extends TestCase{
         operationList.addOperation(operation);
         Assert.assertFalse(operationList.getOperationMap().isEmpty());
     }
-
     @Test
     public void testAddingToOperationListInOneQueue(){
         // add 2 elements in queue

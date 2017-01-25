@@ -7,7 +7,7 @@ import org.junit.Test;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-public class ClientTest extends TestCase {
+public class TestClient extends TestCase {
 
     @Test
     public void testEquals(){
