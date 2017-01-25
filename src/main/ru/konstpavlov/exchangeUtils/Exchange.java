@@ -124,23 +124,11 @@ public class Exchange {
         return clients;
     }
 
-    public void setClients(Map<String, Client> clients) {
-        this.clients = clients;
-    }
-
     public OperationList getSellList() {
         return sellList;
     }
 
-    public void setSellList(OperationList sellList) {
-        this.sellList = sellList;
-    }
-
     public OperationList getBuyList() {
         return buyList;
-    }
-
-    public void setBuyList(OperationList buyList) {
-        this.buyList = buyList;
     }
 }
