@@ -11,7 +11,7 @@ public class OperationListTest extends TestCase{
 
     @Test
     public void testAddingToOperationList(){
-        // тест на добавление
+        // adding to queue
         OperationList operationList = new OperationList();
         ExchangeOperation operation = new SellOperation("TestClient", new Order(SecurityType.A,5,10));
         operationList.addOperation(operation);
@@ -20,7 +20,7 @@ public class OperationListTest extends TestCase{
 
     @Test
     public void testAddingToOperationListInOneQueue(){
-        // тест на добавление двух элементов в одну очередь
+        // add 2 elements in queue
         OperationList operationList = new OperationList();
         ExchangeOperation operation = new SellOperation("TestClient1", new Order(SecurityType.A,5,10));
         ExchangeOperation operation2 = new SellOperation("TestClient2", new Order(SecurityType.A,5,10));

@@ -34,12 +34,7 @@ public class OperationList {
 
     // Method for check existence of operation in operationMap
     public boolean checkOperation(ExchangeOperation operation){
-        if (operationMap.containsKey(operation.getOrder())){
-         return true;
-        }
-        else {
-            return false;
-        }
+        return operationMap.containsKey(operation.getOrder());
     }
 
     public Map<Order, Queue<ExchangeOperation>> getOperationMap() {

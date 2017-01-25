@@ -101,11 +101,17 @@ public class Exchange {
 
     public void showResults(String resultFilePath){
         try(FileWriter writer = new FileWriter(resultFilePath, false)) {
+            int size=clients.size();
+            int count=0;
             for (Map.Entry<String,Client> entry: clients.entrySet()) {
+                count++;
                 String text = entry.getKey()+ "\t";
+                text = text + entry.getValue().getBalance()+"\t";
                 text = text+ entry.getValue().getSecuritiesString();
                 writer.write(text);
-                writer.append("\n");
+                if (count<size){
+                    writer.append("\n");
+                }
             }
             writer.flush();
         }
