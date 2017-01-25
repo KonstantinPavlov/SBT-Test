@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>main.ru.konstpavlov.operations</OriginalElement>
+  <nodes>
+    <node x="-95.0" y="442.25">main.ru.konstpavlov.exchangeUtils.OperationList</node>
+    <node x="414.25" y="378.25">main.ru.konstpavlov.operations.SellOperation</node>
+    <node x="771.0" y="753.5">main.ru.konstpavlov.operations.AbstractOperation</node>
+    <node x="-282.5" y="-61.25">main.ru.konstpavlov.exchangeUtils.Exchange</node>
+    <node x="-415.0" y="668.5">main.ru.konstpavlov.exchangeUtils.Order</node>
+    <node x="459.5" y="218.5">main.ru.konstpavlov.operations.OperationFactory</node>
+    <node x="516.75" y="-152.5">main.ru.konstpavlov.exchangeUtils.Client</node>
+    <node x="731.5" y="382.0">main.ru.konstpavlov.operations.BuyOperation</node>
+    <node x="441.0" y="668.0">main.ru.konstpavlov.operations.ExchangeOperation</node>
+    <node x="-464.0" y="-236.5">main.ru.konstpavlov.utils.SecurityType</node>
+    <node x="-103.25" y="-217.0">main.ru.konstpavlov.Main</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="main.ru.konstpavlov.exchangeUtils.Exchange" target="main.ru.konstpavlov.exchangeUtils.OperationList">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="main.ru.konstpavlov.operations.SellOperation" target="main.ru.konstpavlov.operations.ExchangeOperation">
+      <point x="-60.5" y="-48.0" />
+      <point x="-72.5" y="58.5" />
+    </edge>
+    <edge source="main.ru.konstpavlov.exchangeUtils.OperationList" target="main.ru.konstpavlov.exchangeUtils.Order">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="main.ru.konstpavlov.Main" target="main.ru.konstpavlov.exchangeUtils.Exchange">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="main.ru.konstpavlov.operations.BuyOperation" target="main.ru.konstpavlov.operations.ExchangeOperation">
+      <point x="-61.0" y="-48.0" />
+      <point x="815.0" y="567.0" />
+      <point x="673.5" y="567.0" />
+      <point x="72.5" y="58.5" />
+    </edge>
+    <edge source="main.ru.konstpavlov.exchangeUtils.Exchange" target="main.ru.konstpavlov.operations.OperationFactory">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="main.ru.konstpavlov.operations.SellOperation" target="main.ru.konstpavlov.operations.AbstractOperation">
+      <point x="60.5" y="-48.0" />
+      <point x="649.5" y="577.0" />
+      <point x="823.0" y="577.0" />
+      <point x="-57.0" y="70.5" />
+    </edge>
+    <edge source="main.ru.konstpavlov.exchangeUtils.Client" target="main.ru.konstpavlov.utils.SecurityType">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="main.ru.konstpavlov.operations.OperationFactory" target="main.ru.konstpavlov.operations.SellOperation">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="main.ru.konstpavlov.exchangeUtils.Order" target="main.ru.konstpavlov.utils.SecurityType">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="main.ru.konstpavlov.exchangeUtils.Exchange" target="main.ru.konstpavlov.exchangeUtils.Client">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="main.ru.konstpavlov.exchangeUtils.Exchange" target="main.ru.konstpavlov.exchangeUtils.Order">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="main.ru.konstpavlov.operations.AbstractOperation" target="main.ru.konstpavlov.exchangeUtils.Order">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="main.ru.konstpavlov.operations.BuyOperation" target="main.ru.konstpavlov.operations.AbstractOperation">
+      <point x="61.0" y="-48.0" />
+      <point x="57.0" y="70.5" />
+    </edge>
+    <edge source="main.ru.konstpavlov.operations.OperationFactory" target="main.ru.konstpavlov.operations.BuyOperation">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="main.ru.konstpavlov.exchangeUtils.OperationList" target="main.ru.konstpavlov.operations.ExchangeOperation">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.8" x="364.0" y="520.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
