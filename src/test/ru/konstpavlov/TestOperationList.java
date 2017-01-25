@@ -15,6 +15,7 @@ public class TestOperationList extends TestCase {
         OperationList operationList = new OperationList();
         ExchangeOperation operation = new SellOperation("TestClient", new Order(SecurityType.A,5,10));
         operationList.addOperation(operation);
+
         Assert.assertFalse(operationList.getOperationMap().isEmpty());
     }
     @Test
@@ -25,8 +26,8 @@ public class TestOperationList extends TestCase {
         ExchangeOperation operation2 = new SellOperation("TestClient2", new Order(SecurityType.A,5,10));
         operationList.addOperation(operation);
         operationList.addOperation(operation2);
-        Assert.assertFalse(operationList.getOperationMap().isEmpty());
 
+        Assert.assertFalse(operationList.getOperationMap().isEmpty());
         Assert.assertEquals(2,operationList.getOperationMap().get(operation.getOrder()).size());
     }
 }

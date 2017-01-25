@@ -60,6 +60,7 @@ public class TestExchange extends TestCase{
         securites2.put(SecurityType.C,950 - 2);
         securites2.put(SecurityType.D,560);
         clientsCorrect.put("C2",new Client("C2",4350  + 26 ,securites2));
+        // and another operation is self buy and sell - it doesnt effect balance
         return clientsCorrect;
     }
 
