@@ -29,12 +29,10 @@
 
 Если используется IDE `Intellij IDEA` то в файл `*ProjectName*.iml`  можно добавить следующие настройки папок: 
 ```
-<content url="file://$MODULE_DIR$">
+   <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/resourses" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/ru/konstpavlov/resourses" type="java-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/test/ru/konstpavlov" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/test/ru" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/test" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/test/ru/konstpavlov/resourses" type="java-test-resource" />
     </content>
